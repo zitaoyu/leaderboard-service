@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "azure_function": {
+    "leaderboardServiceFunction": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7264",
+      "commandLineArgs": "--port 7083",
       "launchBrowser": false
     }
   }
