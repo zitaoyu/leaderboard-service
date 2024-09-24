@@ -23,7 +23,7 @@ namespace LeaderboardServiceFunction.Functions
         // POST Function for uploading data
         [Function("upload")]
         public async Task<HttpResponseData> UploadScore(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req,
             FunctionContext executionContext)
         {
             var requestBody = await req.ReadAsStringAsync();
@@ -47,7 +47,7 @@ namespace LeaderboardServiceFunction.Functions
         // GET Function for retrieving leaderboard entries
         [Function("getScores")]
         public async Task<HttpResponseData> GetScores(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req,
+            [HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req,
             FunctionContext executionContext)
         {
             var documents = await _leaderboardService.GetLeaderboardEntriesAsync();
